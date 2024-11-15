@@ -52,7 +52,7 @@ const CreateEvent = () => {
       toast.error(error);
     }
     if (success) {
-      toast.success("Event created successfully!");
+      toast.success("Événement créé avec succès !");
       navigate("/dashboard-events");
       window.location.reload();
     }
@@ -101,13 +101,13 @@ const CreateEvent = () => {
 
   return (
     <div className="w-[90%] 800px:w-[50%] bg-white  shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll">
-      <h5 className="text-[30px] font-Poppins text-center">Create Event</h5>
+      <h5 className="text-[30px] font-Poppins text-center">Créer un événement</h5>
       {/* create event form */}
       <form onSubmit={handleSubmit}>
         <br />
         <div>
           <label className="pb-2">
-            Name <span className="text-red-500">*</span>
+            Nom <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -138,14 +138,14 @@ const CreateEvent = () => {
         <br />
         <div>
           <label className="pb-2">
-            Category <span className="text-red-500">*</span>
+            Categorie <span className="text-red-500">*</span>
           </label>
           <select
             className="w-full mt-2 border h-[35px] rounded-[5px]"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option value="Choose a category">Choose a category</option>
+            <option value="Choose a category">Choisir une categorie</option>
             {categoriesData &&
               categoriesData.map((i) => (
                 <option value={i.title} key={i.title}>
@@ -156,7 +156,7 @@ const CreateEvent = () => {
         </div>
         <br />
         <div>
-          <label className="pb-2">Tags</label>
+          <label className="pb-2">Mots clés</label>
           <input
             type="text"
             name="tags"
@@ -168,7 +168,7 @@ const CreateEvent = () => {
         </div>
         <br />
         <div>
-          <label className="pb-2">Original Price</label>
+          <label className="pb-2">Prix d'origine</label>
           <input
             type="number"
             name="price"
@@ -181,7 +181,7 @@ const CreateEvent = () => {
         <br />
         <div>
           <label className="pb-2">
-            Price (With Discount) <span className="text-red-500">*</span>
+          Prix (avec remise) <span className="text-red-500">*</span>
           </label>
           <input
             type="number"
@@ -195,7 +195,7 @@ const CreateEvent = () => {
         <br />
         <div>
           <label className="pb-2">
-            Product Stock <span className="text-red-500">*</span>
+          Stock du produit <span className="text-red-500">*</span>
           </label>
           <input
             type="number"
@@ -209,7 +209,7 @@ const CreateEvent = () => {
         <br />
         <div>
           <label className="pb-2">
-            Event Start Date <span className="text-red-500">*</span>
+          Date de début de l'événement <span className="text-red-500">*</span>
           </label>
           <input
             type="date"
@@ -225,7 +225,7 @@ const CreateEvent = () => {
         <br />
         <div>
           <label className="pb-2">
-            Event End Date <span className="text-red-500">*</span>
+          Date de fin de l'événement  <span className="text-red-500">*</span>
           </label>
           <input
             type="date"
@@ -241,7 +241,7 @@ const CreateEvent = () => {
         <br />
         <div>
           <label className="pb-2">
-            Upload Images <span className="text-red-500">*</span>
+          Télécharger des images  <span className="text-red-500">*</span>
           </label>
           <input
             type="file"
@@ -269,7 +269,7 @@ const CreateEvent = () => {
           <div>
             <input
               type="submit"
-              value="Create"
+              value="Créer"
               className="mt-2 cursor-pointer appearance-none text-center block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             />
           </div>

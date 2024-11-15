@@ -54,7 +54,7 @@ const CountDown = ({ data }) => {
       {timerComponents.length ? (
         timerComponents
       ) : (
-        <span className="text-[red] text-[25px]">Time's Up</span>
+        <span className="text-[red] text-[25px]">Le temps est écoulé</span>
       )}
     </div>
   );

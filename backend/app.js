@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 app.use(cors({
-  origin: ['https://eshop-tutorial-pyri.vercel.app',],
+  origin: 'http://localhost:3000',
   credentials: true
 }));
 
@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use("/test", (req, res) => {
   res.send("Hello world!");
 });
-
+app.use("/", express.static("uploads"));
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
 // config

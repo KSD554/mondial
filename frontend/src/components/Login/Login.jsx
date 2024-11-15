@@ -37,8 +37,8 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Login to your account
+        <h2 className="mt-6 text-center text-2xl font-extrabold text-gray-900">
+        Connectez-vous à votre compte
         </h2>
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -49,7 +49,7 @@ const Login = () => {
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-700"
               >
-                Email address
+                Adresse email
               </label>
               <div className="mt-1">
                 <input
@@ -68,7 +68,7 @@ const Login = () => {
                 htmlFor="password"
                 className="block text-sm font-medium text-gray-700"
               >
-                Password
+               Mot de passe
               </label>
               <div className="mt-1 relative">
                 <input
@@ -107,7 +107,7 @@ const Login = () => {
                   htmlFor="remember-me"
                   className="ml-2 block text-sm text-gray-900"
                 >
-                  Remember me
+                  Se souvenir de moi
                 </label>
               </div>
               <div className="text-sm">
@@ -115,7 +115,7 @@ const Login = () => {
                   href=".forgot-password"
                   className="font-medium text-blue-600 hover:text-blue-500"
                 >
-                  Forgot your password?
+                  Mot de passe oublié ?
                 </a>
               </div>
             </div>
@@ -124,13 +124,13 @@ const Login = () => {
                 type="submit"
                 className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
               >
-                Submit
+                Soumettre
               </button>
             </div>
             <div className={`${styles.noramlFlex} w-full`}>
-              <h4>Not have any account?</h4>
+              <h4>Vous n'avez pas de compte ?</h4>
               <Link to="/sign-up" className="text-blue-600 pl-2">
-                Sign Up
+                 S'inscrire
               </Link>
             </div>
           </form>

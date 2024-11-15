@@ -8,7 +8,7 @@ const CheckoutSteps = ({active}) => {
         <div className="w-[90%] 800px:w-[50%] flex items-center flex-wrap">
                <div className={`${styles.noramlFlex}`}>
                 <div className={`${styles.cart_button}`}>
-                       <span className={`${styles.cart_button_text}`}>1.Shipping</span>
+                       <span className={`${styles.cart_button_text}`}>1.Expédition</span>
                 </div>
                 <div className={`${
                     active > 1 ? "w-[30px] 800px:w-[70px] h-[4px] !bg-[#f63b60]"
@@ -19,7 +19,7 @@ const CheckoutSteps = ({active}) => {
                <div className={`${styles.noramlFlex}`}>
                 <div className={`${active > 1 ? `${styles.cart_button}` : `${styles.cart_button} !bg-[#FDE1E6]`}`}>
                     <span className={`${active > 1 ? `${styles.cart_button_text}` : `${styles.cart_button_text} !text-[#f63b60]`}`}>
-                        2.Payment
+                    2.Paiement
                     </span>
                 </div>
                </div>
@@ -31,7 +31,7 @@ const CheckoutSteps = ({active}) => {
                 }`} />
                 <div className={`${active > 2 ? `${styles.cart_button}` : `${styles.cart_button} !bg-[#FDE1E6]`}`}>
                     <span className={`${active > 2 ? `${styles.cart_button_text}` : `${styles.cart_button_text} !text-[#f63b60]`}`}>
-                        3.Success
+                    3.Succès
                     </span>
                 </div>
                </div>

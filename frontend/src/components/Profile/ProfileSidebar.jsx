@@ -42,7 +42,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 1 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Profile
+          Profil
         </span>
       </div>
       <div
@@ -55,7 +55,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 2 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Orders
+          Commandes
         </span>
       </div>
       <div
@@ -68,7 +68,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 3 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Refunds
+          Remboursements
         </span>
       </div>
 
@@ -82,7 +82,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 4 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Inbox
+          Boîte de réception
         </span>
       </div>
 
@@ -96,7 +96,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 5 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Track Order
+          Suivre la commande
         </span>
       </div>
 
@@ -110,7 +110,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 6 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Change Password
+          Modifier le mot de passe
         </span>
       </div>
 
@@ -124,7 +124,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 7 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Address
+          Adresse
         </span>
       </div>
 
@@ -158,7 +158,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 8 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Log out
+          Déconnexion
         </span>
       </div>
     </div>

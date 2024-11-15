@@ -67,7 +67,7 @@ const Header = ({ activeHeading }) => {
           <div className="w-[50%] relative">
             <input
               type="text"
-              placeholder="Search Product..."
+              placeholder="Rechercher un produit..."
               value={searchTerm}
               onChange={handleSearchChange}
               className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
@@ -100,7 +100,7 @@ const Header = ({ activeHeading }) => {
           <div className={`${styles.button}`}>
             <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
               <h1 className="text-[#fff] flex items-center">
-                {isSeller ? "Go Dashboard" : "Become Seller"}{" "}
+                {isSeller ? "Go Dashboard" : "Devenir vendeur"}{" "}
                 <IoIosArrowForward className="ml-1" />
               </h1>
             </Link>
@@ -122,7 +122,7 @@ const Header = ({ activeHeading }) => {
               <button
                 className={`h-[100%] w-full flex justify-between items-center pl-10 bg-white font-sans text-lg font-[500] select-none rounded-t-md`}
               >
-                All Categories
+                Toutes les catégories
               </button>
               <IoIosArrowDown
                 size={20}
@@ -269,7 +269,7 @@ const Header = ({ activeHeading }) => {
               <div className="my-8 w-[92%] m-auto h-[40px relative]">
                 <input
                   type="search"
-                  placeholder="Search Product..."
+                  placeholder="Rechercher un produit..."
                   className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
                   value={searchTerm}
                   onChange={handleSearchChange}
@@ -301,7 +301,7 @@ const Header = ({ activeHeading }) => {
               <div className={`${styles.button} ml-4 !rounded-[4px]`}>
                 <Link to="/shop-create">
                   <h1 className="text-[#fff] flex items-center">
-                    Become Seller <IoIosArrowForward className="ml-1" />
+                  Devenir vendeur <IoIosArrowForward className="ml-1" />
                   </h1>
                 </Link>
               </div>
@@ -326,13 +326,13 @@ const Header = ({ activeHeading }) => {
                       to="/login"
                       className="text-[18px] pr-[10px] text-[#000000b7]"
                     >
-                      Login /
+                      Se connecter /
                     </Link>
                     <Link
                       to="/sign-up"
                       className="text-[18px] text-[#000000b7]"
                     >
-                      Sign up
+                      S'inscrire
                     </Link>
                   </>
                 )}

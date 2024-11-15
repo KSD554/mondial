@@ -33,7 +33,7 @@ const Wishlist = ({ setOpenWishlist }) => {
                 onClick={() => setOpenWishlist(false)}
               />
             </div>
-            <h5>Wishlist Items is empty!</h5>
+            <h5>Les articles de la liste de souhaits sont vides !</h5>
           </div>
         ) : (
           <>
@@ -49,7 +49,7 @@ const Wishlist = ({ setOpenWishlist }) => {
               <div className={`${styles.noramlFlex} p-4`}>
                 <AiOutlineHeart size={25} />
                 <h5 className="pl-2 text-[20px] font-[500]">
-                  {wishlist && wishlist.length} items
+                  {wishlist && wishlist.length} articles
                 </h5>
               </div>
 
@@ -88,7 +88,7 @@ const CartSingle = ({ data,removeFromWishlistHandler,addToCartHandler }) => {
         <div className="pl-[5px]">
           <h1>{data.name}</h1>
           <h4 className="font-[600] pt-3 800px:pt-[3px] text-[17px] text-[#d02222] font-Roboto">
-            US${totalPrice}
+            FCFA{totalPrice}
           </h4>
         </div>
         <div>

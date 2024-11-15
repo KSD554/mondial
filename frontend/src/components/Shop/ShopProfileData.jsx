@@ -33,7 +33,7 @@ const ShopProfileData = ({ isOwner }) => {
                 active === 1 ? "text-red-500" : "text-[#333]"
               } cursor-pointer pr-[20px]`}
             >
-              Shop Products
+              Produits de la boutique
             </h5>
           </div>
           <div className="flex items-center" onClick={() => setActive(2)}>
@@ -42,7 +42,7 @@ const ShopProfileData = ({ isOwner }) => {
                 active === 2 ? "text-red-500" : "text-[#333]"
               } cursor-pointer pr-[20px]`}
             >
-              Running Events
+              Événements en direct
             </h5>
           </div>
 
@@ -52,7 +52,7 @@ const ShopProfileData = ({ isOwner }) => {
                 active === 3 ? "text-red-500" : "text-[#333]"
               } cursor-pointer pr-[20px]`}
             >
-              Shop Reviews
+              Avis sur la boutique
             </h5>
           </div>
         </div>
@@ -94,7 +94,7 @@ const ShopProfileData = ({ isOwner }) => {
           </div>
           {events && events.length === 0 && (
             <h5 className="w-full text-center py-5 text-[18px]">
-              No Events have for this shop!
+              Aucun événement n'a été organisé pour cette boutique !
             </h5>
           )}
         </div>
@@ -122,7 +122,7 @@ const ShopProfileData = ({ isOwner }) => {
             ))}
           {allReviews && allReviews.length === 0 && (
             <h5 className="w-full text-center py-5 text-[18px]">
-              No Reviews have for this shop!
+              Aucun avis n'a été laissé pour cette boutique !
             </h5>
           )}
         </div>

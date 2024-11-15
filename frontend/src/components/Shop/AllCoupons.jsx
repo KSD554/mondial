@@ -41,7 +41,7 @@ const AllCoupons = () => {
 
   const handleDelete = async (id) => {
     axios.delete(`${server}/coupon/delete-coupon/${id}`,{withCredentials: true}).then((res) => {
-      toast.success("Coupon code deleted succesfully!")
+      toast.success("Code promo supprimé avec succès !")
     })
     window.location.reload();
   };
@@ -63,7 +63,7 @@ const AllCoupons = () => {
         { withCredentials: true }
       )
       .then((res) => {
-       toast.success("Coupon code created successfully!");
+       toast.success("Code promo créé avec succès !");
        setOpen(false);
        window.location.reload();
       })
@@ -128,7 +128,7 @@ const AllCoupons = () => {
               className={`${styles.button} !w-max !h-[45px] px-3 !rounded-[5px] mr-3 mb-3`}
               onClick={() => setOpen(true)}
             >
-              <span className="text-white">Create Coupon Code</span>
+              <span className="text-white">Créer un code promo</span>
             </div>
           </div>
           <DataGrid
@@ -149,14 +149,14 @@ const AllCoupons = () => {
                   />
                 </div>
                 <h5 className="text-[30px] font-Poppins text-center">
-                  Create Coupon code
+                Créer un code promo
                 </h5>
                 {/* create coupoun code */}
                 <form onSubmit={handleSubmit} aria-required={true}>
                   <br />
                   <div>
                     <label className="pb-2">
-                      Name <span className="text-red-500">*</span>
+                      Nom <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -165,13 +165,13 @@ const AllCoupons = () => {
                       value={name}
                       className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       onChange={(e) => setName(e.target.value)}
-                      placeholder="Enter your coupon code name..."
+                      placeholder="Entrez le nom de votre code promo..."
                     />
                   </div>
                   <br />
                   <div>
                     <label className="pb-2">
-                      Discount Percentenge{" "}
+                    Pourcentage de remise{" "}
                       <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -181,12 +181,12 @@ const AllCoupons = () => {
                       required
                       className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       onChange={(e) => setValue(e.target.value)}
-                      placeholder="Enter your coupon code value..."
+                      placeholder="Entrez la valeur de votre code promo..."
                     />
                   </div>
                   <br />
                   <div>
-                    <label className="pb-2">Min Amount</label>
+                    <label className="pb-2">Montant minimum</label>
                     <input
                       type="number"
                       name="value"
@@ -198,7 +198,7 @@ const AllCoupons = () => {
                   </div>
                   <br />
                   <div>
-                    <label className="pb-2">Max Amount</label>
+                    <label className="pb-2">Montant maximum</label>
                     <input
                       type="number"
                       name="value"
@@ -210,14 +210,14 @@ const AllCoupons = () => {
                   </div>
                   <br />
                   <div>
-                    <label className="pb-2">Selected Product</label>
+                    <label className="pb-2">Produit sélectionné</label>
                     <select
                       className="w-full mt-2 border h-[35px] rounded-[5px]"
                       value={selectedProducts}
                       onChange={(e) => setSelectedProducts(e.target.value)}
                     >
-                      <option value="Choose your selected products">
-                        Choose a selected product
+                      <option value="choisissez vos produits sélectionnés">
+                      Choisissez un produit sélectionné
                       </option>
                       {products &&
                         products.map((i) => (
@@ -231,7 +231,7 @@ const AllCoupons = () => {
                   <div>
                     <input
                       type="submit"
-                      value="Create"
+                      value="Créer"
                       className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     />
                   </div>

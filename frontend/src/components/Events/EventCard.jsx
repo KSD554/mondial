@@ -46,16 +46,16 @@ const EventCard = ({ active, data }) => {
             </h5>
           </div>
           <span className="pr-3 font-[400] text-[17px] text-[#44a55e]">
-            {data.sold_out} sold
+            {data.sold_out} vendu
           </span>
         </div>
         <CountDown data={data} />
         <br />
         <div className="flex items-center">
           <Link to={`/product/${data._id}?isEvent=true`}>
-            <div className={`${styles.button} text-[#fff]`}>See Details</div>
+            <div className={`${styles.button} text-[#fff]`}>Voir les détails</div>
           </Link>
-          <div className={`${styles.button} text-[#fff] ml-5`} onClick={() => addToCartHandler(data)}>Add to cart</div>
+          <div className={`${styles.button} text-[#fff] ml-5`} onClick={() => addToCartHandler(data)}>Ajouter au panier</div>
         </div>
       </div>
     </div>

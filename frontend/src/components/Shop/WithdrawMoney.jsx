@@ -105,13 +105,13 @@ const WithdrawMoney = () => {
     <div className="w-full h-[90vh] p-8">
       <div className="w-full bg-white h-full rounded flex items-center justify-center flex-col">
         <h5 className="text-[20px] pb-4">
-          Available Balance: ${availableBalance}
+        Solde disponible : FCFA {availableBalance}
         </h5>
         <div
           className={`${styles.button} text-white !h-[42px] !rounded`}
           onClick={() => (availableBalance < 50 ? error() : setOpen(true))}
         >
-          Withdraw
+          Retirer
         </div>
       </div>
       {open && (

@@ -68,16 +68,16 @@ const UserOrderDetails = () => {
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center">
           <BsFillBagFill size={30} color="crimson" />
-          <h1 className="pl-2 text-[25px]">Order Details</h1>
+          <h1 className="pl-2 text-[25px]">Détails de la commande</h1>
         </div>
       </div>
 
       <div className="w-full flex items-center justify-between pt-6">
         <h5 className="text-[#00000084]">
-          Order ID: <span>#{data?._id?.slice(0, 8)}</span>
+        N° de commande: <span>#{data?._id?.slice(0, 8)}</span>
         </h5>
         <h5 className="text-[#00000084]">
-          Placed on: <span>{data?.createdAt?.slice(0, 10)}</span>
+        Placé sur : <span>{data?.createdAt?.slice(0, 10)}</span>
         </h5>
       </div>
 
@@ -96,14 +96,14 @@ const UserOrderDetails = () => {
             <div className="w-full">
               <h5 className="pl-3 text-[20px]">{item.name}</h5>
               <h5 className="pl-3 text-[20px] text-[#00000091]">
-                US${item.discountPrice} x {item.qty}
+                FCFA{item.discountPrice} x {item.qty}
               </h5>
             </div>
             {!item.isReviewed && data?.status === "Delivered" ?  <div
                 className={`${styles.button} text-[#fff]`}
                 onClick={() => setOpen(true) || setSelectedItem(item)}
               >
-                Write a review
+               Écrire un avis
               </div> : (
              null
             )}
@@ -123,7 +123,7 @@ const UserOrderDetails = () => {
               />
             </div>
             <h2 className="text-[30px] font-[500] font-Poppins text-center">
-              Give a Review
+            Donnez votre avis
             </h2>
             <br />
             <div className="w-full flex">
@@ -135,7 +135,7 @@ const UserOrderDetails = () => {
               <div>
                 <div className="pl-3 text-[20px]">{selectedItem?.name}</div>
                 <h4 className="pl-3 text-[20px]">
-                  US${selectedItem?.discountPrice} x {selectedItem?.qty}
+                  FCFA{selectedItem?.discountPrice} x {selectedItem?.qty}
                 </h4>
               </div>
             </div>
@@ -145,7 +145,7 @@ const UserOrderDetails = () => {
 
             {/* ratings */}
             <h5 className="pl-3 text-[20px] font-[500]">
-              Give a Rating <span className="text-red-500">*</span>
+            Donnez une note <span className="text-red-500">*</span>
             </h5>
             <div className="flex w-full ml-2 pt-1">
               {[1, 2, 3, 4, 5].map((i) =>
@@ -171,7 +171,7 @@ const UserOrderDetails = () => {
             <br />
             <div className="w-full ml-3">
               <label className="block text-[20px] font-[500]">
-                Write a comment
+              Écrire un commentaire
                 <span className="ml-1 font-[400] text-[16px] text-[#00000052]">
                   (optional)
                 </span>
@@ -183,7 +183,7 @@ const UserOrderDetails = () => {
                 rows="5"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
-                placeholder="How was your product? write your expresion about it!"
+                placeholder="Comment était votre produit ? Écrivez votre expression à ce sujet !"
                 className="mt-2 w-[95%] border p-2 outline-none"
               ></textarea>
             </div>
@@ -191,7 +191,7 @@ const UserOrderDetails = () => {
               className={`${styles.button} text-white text-[20px] ml-3`}
               onClick={rating > 1 ? reviewHandler : null}
             >
-              Submit
+              Soumettre
             </div>
           </div>
         </div>
@@ -199,14 +199,14 @@ const UserOrderDetails = () => {
 
       <div className="border-t w-full text-right">
         <h5 className="pt-3 text-[18px]">
-          Total Price: <strong>US${data?.totalPrice}</strong>
+        Prix ​​total : <strong>FCFFA{data?.totalPrice}</strong>
         </h5>
       </div>
       <br />
       <br />
       <div className="w-full 800px:flex items-center">
         <div className="w-full 800px:w-[60%]">
-          <h4 className="pt-3 text-[20px] font-[600]">Shipping Address:</h4>
+          <h4 className="pt-3 text-[20px] font-[600]">Adresse de livraison:</h4>
           <h4 className="pt-3 text-[20px]">
             {data?.shippingAddress.address1 +
               " " +
@@ -217,24 +217,24 @@ const UserOrderDetails = () => {
           <h4 className=" text-[20px]">{data?.user?.phoneNumber}</h4>
         </div>
         <div className="w-full 800px:w-[40%]">
-          <h4 className="pt-3 text-[20px]">Payment Info:</h4>
+          <h4 className="pt-3 text-[20px]">Informations de paiement :</h4>
           <h4>
-            Status:{" "}
-            {data?.paymentInfo?.status ? data?.paymentInfo?.status : "Not Paid"}
+            Statut:{" "}
+            {data?.paymentInfo?.status ? data?.paymentInfo?.status : "Non payé"}
           </h4>
           <br />
            {
-            data?.status === "Delivered" && (
+            data?.status === "Livré" && (
               <div className={`${styles.button} text-white`}
               onClick={refundHandler}
-              >Give a Refund</div>
+              >Donner un remboursement</div>
             )
            }
         </div>
       </div>
       <br />
       <Link to="/">
-        <div className={`${styles.button} text-white`}>Send Message</div>
+        <div className={`${styles.button} text-white`}>Message</div>
       </Link>
       <br />
       <br />

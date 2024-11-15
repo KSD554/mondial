@@ -16,7 +16,7 @@ router.post("/create-user", async (req, res, next) => {
     const userEmail = await User.findOne({ email });
 
     if (userEmail) {
-      return next(new ErrorHandler("User already exists", 400));
+      return next(new ErrorHandler("L'utilisateur existe déjà", 400));
     }
 
     const myCloud = await cloudinary.v2.uploader.upload(avatar, {
@@ -35,17 +35,17 @@ router.post("/create-user", async (req, res, next) => {
 
     const activationToken = createActivationToken(user);
 
-    const activationUrl = `https://eshop-tutorial-pyri.vercel.app/activation/${activationToken}`;
+    const activationUrl = `http://localhost:3000/activation/${activationToken}`;
 
     try {
       await sendMail({
         email: user.email,
-        subject: "Activate your account",
-        message: `Hello ${user.name}, please click on the link to activate your account: ${activationUrl}`,
+        subject: "Activez votre compte",
+        message: `Bonjour ${user.name}, veuillez cliquer sur le lien pour activer votre compte: ${activationUrl}`,
       });
       res.status(201).json({
         success: true,
-        message: `please check your email:- ${user.email} to activate your account!`,
+        message: `Veuillez vérifier votre e-mail:- ${user.email} pour activer votre compte !`,
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -82,7 +82,7 @@ router.post(
       let user = await User.findOne({ email });
 
       if (user) {
-        return next(new ErrorHandler("User already exists", 400));
+        return next(new ErrorHandler("L'utilisateur existe déjà", 400));
       }
       user = await User.create({
         name,
@@ -106,20 +106,20 @@ router.post(
       const { email, password } = req.body;
 
       if (!email || !password) {
-        return next(new ErrorHandler("Please provide the all fields!", 400));
+        return next(new ErrorHandler("Veuillez remplir tous les champs !", 400));
       }
 
       const user = await User.findOne({ email }).select("+password");
 
       if (!user) {
-        return next(new ErrorHandler("User doesn't exists!", 400));
+        return next(new ErrorHandler("L'utilisateur n'existe pas !", 400));
       }
 
       const isPasswordValid = await user.comparePassword(password);
 
       if (!isPasswordValid) {
         return next(
-          new ErrorHandler("Please provide the correct information", 400)
+          new ErrorHandler("Veuillez fournir les informations correctes", 400)
         );
       }
 
@@ -139,7 +139,7 @@ router.get(
       const user = await User.findById(req.user.id);
 
       if (!user) {
-        return next(new ErrorHandler("User doesn't exists", 400));
+        return next(new ErrorHandler("L'utilisateur n'existe pas", 400));
       }
 
       res.status(200).json({
@@ -165,7 +165,7 @@ router.get(
       });
       res.status(201).json({
         success: true,
-        message: "Log out successful!",
+        message: "Déconnexion réussie !",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -184,14 +184,14 @@ router.put(
       const user = await User.findOne({ email }).select("+password");
 
       if (!user) {
-        return next(new ErrorHandler("User not found", 400));
+        return next(new ErrorHandler("Utilisateur non trouvé", 400));
       }
 
       const isPasswordValid = await user.comparePassword(password);
 
       if (!isPasswordValid) {
         return next(
-          new ErrorHandler("Please provide the correct information", 400)
+          new ErrorHandler("Veuillez fournir les informations correctes", 400)
         );
       }
 
@@ -259,7 +259,7 @@ router.put(
       );
       if (sameTypeAddress) {
         return next(
-          new ErrorHandler(`${req.body.addressType} address already exists`)
+          new ErrorHandler(`${req.body.addressType}  l'adresse existe déjà`)
         );
       }
 
@@ -324,12 +324,12 @@ router.put(
       );
 
       if (!isPasswordMatched) {
-        return next(new ErrorHandler("Old password is incorrect!", 400));
+        return next(new ErrorHandler("L'ancien mot de passe est incorrect !", 400));
       }
 
       if (req.body.newPassword !== req.body.confirmPassword) {
         return next(
-          new ErrorHandler("Password doesn't matched with each other!", 400)
+          new ErrorHandler("Les mots de passe ne correspondent pas !", 400)
         );
       }
       user.password = req.body.newPassword;
@@ -338,7 +338,7 @@ router.put(
 
       res.status(200).json({
         success: true,
-        message: "Password updated successfully!",
+        message: "Mot de passe mis à jour avec succès !",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -394,7 +394,7 @@ router.delete(
 
       if (!user) {
         return next(
-          new ErrorHandler("User is not available with this id", 400)
+          new ErrorHandler("L'utilisateur n'est pas disponible avec cet identifiant", 400)
         );
       }
 
@@ -406,7 +406,7 @@ router.delete(
 
       res.status(201).json({
         success: true,
-        message: "User deleted successfully!",
+        message: "Utilisateur supprimé avec succès !",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));

@@ -13,20 +13,18 @@ const Hero = () => {
     >
       <div className={`${styles.section} w-[90%] 800px:w-[60%]`}>
         <h1
-          className={`text-[35px] leading-[1.2] 800px:text-[60px] text-[#3d3a3a] font-[600] capitalize`}
+          className={`text-[50px] leading-[1.2] 800px:text-[55px] text-[#3d3a3a] font-[600] capitalize`}
         >
-          Best Collection for <br /> home Decoration
+          Mondial
         </h1>
         <p className="pt-5 text-[16px] font-[Poppins] font-[400] text-[#000000ba]">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae,
-          assumenda? Quisquam itaque <br /> exercitationem labore vel, dolore
-          quidem asperiores, laudantium temporibus soluta optio consequatur{" "}
-          <br /> aliquam deserunt officia. Dolorum saepe nulla provident.
+        Bienvenue sur Mondial, votre marketplace multivendeur où vous pouvez explorer un vaste univers de produits provenant de vendeurs du monde entier. Que vous recherchiez des articles de mode, des produits high-tech, des cosmétiques, ou des accessoires pour la maison, vous trouverez tout ce dont vous avez besoin en un seul endroit. Nous connectons des milliers de vendeurs pour vous offrir un choix inégalé, des prix compétitifs, et des offres exclusives. Profitez d'une expérience d'achat fluide, sécurisée, et rapide, avec la livraison à votre porte. Mondial Store :{" "}
+        l'endroit où le monde fait ses courses !
         </p>
         <Link to="/products" className="inline-block">
             <div className={`${styles.button} mt-5`}>
                  <span className="text-[#fff] font-[Poppins] text-[18px]">
-                    Shop Now
+                 C'est parti !
                  </span>
             </div>
         </Link>
