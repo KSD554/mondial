@@ -136,21 +136,31 @@ router.get(
   isAuthenticated,
   catchAsyncErrors(async (req, res, next) => {
     try {
+      // Vérifier que req.user existe
+      if (!req.user) {
+        return next(new ErrorHandler("User not authenticated", 401));
+      }
+
+      // Récupérer l'utilisateur depuis la base de données
       const user = await User.findById(req.user.id);
 
       if (!user) {
-        return next(new ErrorHandler("User doesn't exists", 400));
+        return next(new ErrorHandler("User doesn't exist", 404));  // 404 pour un utilisateur non trouvé
       }
 
+      // Répondre avec l'utilisateur
       res.status(200).json({
         success: true,
-        user,
+        message: "User data fetched successfully",  // Message de succès
+        user,  // Données de l'utilisateur
       });
     } catch (error) {
-      return next(new ErrorHandler(error.message, 500));
+      // Gérer les erreurs internes du serveur
+      return next(new ErrorHandler("Internal server error", 500));
     }
   })
 );
+
 
 // log out user
 router.get(
