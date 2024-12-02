@@ -36,20 +36,28 @@ export const loadSeller = () => async (dispatch) => {
     dispatch({
       type: "LoadSellerRequest",
     });
+
     const { data } = await axios.get(`${server}/shop/getSeller`, {
       withCredentials: true,
     });
+
     dispatch({
       type: "LoadSellerSuccess",
       payload: data.seller,
     });
   } catch (error) {
+    const errorMessage = 
+      error.response?.data?.message ||  // Erreur spécifique renvoyée par le backend
+      error.message ||                  // Message d'erreur général capturé par Axios
+      "Une erreur est survenue lors du chargement des informations du vendeur."; // Message par défaut
+
     dispatch({
       type: "LoadSellerFail",
-      payload: error.response.data.message,
+      payload: errorMessage,
     });
   }
 };
+
 
 // user update information
 export const updateUserInformation =
