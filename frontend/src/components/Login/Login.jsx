@@ -14,25 +14,28 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    await axios
-      .post(
+  
+    if (!email || !password) {
+      return toast.error("Veuillez remplir tous les champs.");
+    }
+  
+    try {
+      const response = await axios.post(
         `${server}/user/login-user`,
-        {
-          email,
-          password,
-        },
+        { email, password },
         { withCredentials: true }
-      )
-      .then((res) => {
-        toast.success("Login Success!");
-        navigate("/");
-        window.location.reload(true); 
-      })
-      .catch((err) => {
-        toast.error(err.response.data.message);
-      });
+      );
+  
+      toast.success("Connexion réussie !");
+      navigate("/");
+      // Option : mettre à jour un état utilisateur au lieu de recharger la page
+    } catch (err) {
+      const errorMessage =
+        err.response?.data?.message || "Une erreur est survenue. Veuillez réessayer.";
+      toast.error(errorMessage);
+    }
   };
+  
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
