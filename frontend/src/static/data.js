@@ -1,7 +1,7 @@
 // navigation Data
 export const navItems = [
     {
-      title: "Home",
+      title: "Accueil",
       url: "/",
     },
     {
