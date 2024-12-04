@@ -1,33 +1,28 @@
 import axios from "axios";
 import { server } from "../../server";
 
-// load user
 export const loadUser = () => async (dispatch) => {
   try {
-    dispatch({
-      type: "LoadUserRequest",
-    });
+    dispatch({ type: "LoadUserRequest" });
 
     const { data } = await axios.get(`${server}/user/getuser`, {
       withCredentials: true,
     });
 
-    dispatch({
-      type: "LoadUserSuccess",
-      payload: data.user,
-    });
+    dispatch({ type: "LoadUserSuccess", payload: data.user });
   } catch (error) {
-    const errorMessage = 
-      error.response?.data?.message ||  // Si disponible, on prend l'erreur spécifique du backend
-      error.message ||                  // Sinon, on utilise un message générique de l'erreur
-      "Une erreur est survenue. Veuillez réessayer plus tard."; // Message par défaut
+    const errorMessage =
+      error.response?.data?.message ||
+      error.message ||
+      "Impossible de charger l'utilisateur. Veuillez réessayer.";
 
-    dispatch({
-      type: "LoadUserFail",
-      payload: errorMessage,
-    });
+    dispatch({ type: "LoadUserFail", payload: errorMessage });
+
+    // Débogage console (optionnel)
+    console.error("LoadUser Error:", error.response || error);
   }
 };
+
 
 
 // load seller
